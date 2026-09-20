@@ -97,17 +97,13 @@
 
   .hero-image{
     width: 100%;
-    height: 30vh;
-    min-height: 190px;
-    max-height: 320px;
-    overflow: hidden;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
+    background: var(--bg);
   }
   .hero-image img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
   }
 
   /* ---------- Sections ---------- */
@@ -135,7 +131,7 @@
     display: grid;
     grid-template-columns: 170px 1fr;
     gap: 32px;
-    align-items: start;
+    align-items: center;
   }
   .about-grid img{
     border: 1px solid var(--line);
@@ -145,8 +141,8 @@
   .about p + p{ margin-top: 12px; }
 
   @media (max-width: 560px){
-    .about-grid{ grid-template-columns: 1fr; }
-    .about-grid img{ max-width: 180px; }
+    .about-grid{ grid-template-columns: 1fr; text-align: center; }
+    .about-grid img{ max-width: 180px; margin: 0 auto; }
   }
 
   .snapshots{
@@ -220,13 +216,7 @@
   }
   .book h3{
     font-size: 25px;
-    margin: 0 0 4px;
-  }
-  .book .subtitle{
-    color: var(--ink-dim);
-    font-style: italic;
     margin: 0 0 14px;
-    font-size: 17px;
   }
   .book p{ max-width: 56ch; }
   .book p + p{ margin-top: 12px; }
@@ -268,37 +258,24 @@
   /* ---------- Outings section (featured) ---------- */
   .outings{
     display: grid;
-    grid-template-columns: 170px 1fr;
-    gap: 32px;
-    align-items: start;
+    grid-template-columns: 260px 1fr;
+    gap: 36px;
+    align-items: center;
   }
   .outings img{
     width: 100%;
     border: 1px solid var(--line);
     box-shadow: 0 16px 40px -18px rgba(0,0,0,0.8);
   }
-  .outings-features{
-    list-style: none;
-    margin: 14px 0 0;
-    padding: 0;
-    font-size: 15px;
+  .outings-title{
+    font-size: clamp(28px, 4.2vw, 40px);
+    line-height: 1.12;
+    margin-bottom: 16px;
   }
-  .outings-features li{
-    padding: 8px 0;
-    border-top: 1px solid var(--line);
-    display: flex;
-    gap: 8px;
-  }
-  .outings-features li:first-child{ border-top: none; }
-  .outings-features strong{ color: var(--gold); font-weight: 500; min-width: 170px; }
-  .outings-cta{
-    margin-top: 18px;
-    font-style: italic;
-    font-size: 17px;
-  }
+  .outings p{ max-width: 50ch; }
   .cta{
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 18px;
     border: 1px solid var(--gold-soft);
     padding: 9px 20px;
     font-size: 15px;
@@ -311,27 +288,58 @@
     border-color: var(--gold);
   }
   @media (max-width: 560px){
-    .outings{ grid-template-columns: 1fr; }
-    .outings img{ max-width: 210px; margin: 0 auto; }
-    .outings-features strong{ min-width: 140px; }
+    .outings{ grid-template-columns: 1fr; text-align: center; }
+    .outings img{ max-width: 260px; margin: 0 auto; }
+    .outings p{ margin-left: auto; margin-right: auto; }
   }
+
+  /* ---------- Contact section ---------- */
+  .contact{
+    text-align: center;
+  }
+  .contact h2{
+    font-size: 38px;
+    margin-bottom: 22px;
+  }
+  .contact-row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .contact-email{
+    font-size: 22px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
+  }
+  .contact-email:hover{ color: var(--gold); border-color: var(--gold); }
+  .contact-ig{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink-dim);
+    font-size: 18px;
+  }
+  .contact-ig svg{
+    width: 26px;
+    height: 26px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.6;
+    transition: stroke 0.15s ease;
+  }
+  .contact-ig:hover{ color: var(--gold); }
+  .contact-ig:hover svg{ stroke: var(--ink); }
 
   /* ---------- Footer ---------- */
   footer{
-    padding: 34px 0 46px;
+    padding: 30px 0 46px;
     text-align: center;
     color: var(--ink-dim);
     font-size: 14px;
     border-top: 1px solid var(--line);
   }
-  footer a{ color: var(--ink-dim); }
-  footer a:hover{ color: var(--gold); }
-  .footer-contact{
-    margin-top: 8px;
-    font-size: 14px;
-  }
-  .footer-contact a{ color: var(--gold-soft); }
-  .footer-contact a:hover{ color: var(--gold); }
 </style>
 </head>
 <body>
@@ -344,6 +352,7 @@
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#salidas">Salidas astronómicas</a>
     <a href="#libro">Mi libro</a>
+    <a href="#contacto">Contacto</a>
   </nav>
 </div>
 
@@ -379,16 +388,9 @@
   <section id="salidas" class="outings">
     <img src="stargazers-promo.jpg" alt="Captura de la web Stargazers Catalunya, con previsión de observación, calendario lunar y mapa de contaminación lumínica">
     <div>
-      <span class="kicker">Observación en directo</span>
-      <h2>Stargazers Catalunya</h2>
-      <p>Todo lo que necesitas para planificar tu próxima salida astronómica, en un solo sitio.</p>
-      <ul class="outings-features">
-        <li><strong>Veredicto de la noche</strong> predicción de si una noche y lugar concretos serán propicios para observar</li>
-        <li><strong>Previsión meteorológica</strong> nubosidad, humedad, viento y niebla hora a hora</li>
-        <li><strong>Mapa Bortle</strong> contaminación lumínica de cualquier punto del mapa</li>
-        <li><strong>Calendario lunar</strong> fases e iluminación día a día</li>
-      </ul>
-      <p class="outings-cta">Ven a observar con nosotros.</p>
+      <span class="kicker">Stargazers Catalunya</span>
+      <h2 class="outings-title">Ven a observar con nosotros</h2>
+      <p>Todo lo que necesitas saber para planificar una salida astronómica: previsiones meteorológicas y cómo interpretarlas, veredicto para una noche y lugar concretos, mapa Bortle, fases lunares, hora de salida y puesta de la Luna...</p>
       <a class="cta" href="https://stargazerscataluny.wixsite.com/stargazers-catalunya" target="_blank" rel="noopener">Ver Stargazers Catalunya →</a>
     </div>
   </section>
@@ -399,8 +401,8 @@
       <span class="kicker">Mi libro</span>
       <span class="book-status">Disponible estas Navidades</span>
       <h3>Astronomía al alcance de todos</h3>
-      <p class="subtitle">Robert Vidal Calvís</p>
-      <p>Una guía pensada para que cualquiera pueda entender el cielo desde la primera noche: un recorrido por la mitología y la fascinación que ha despertado la contemplación del firmamento en todas las culturas, y por las apps astronómicas y la revolución de los telescopios inteligentes que hoy ponen el cielo al alcance de todos.</p>
+      <p>Una guía pensada para que cualquiera pueda entender el cielo desde la primera noche: un recorrido por la mitología y la fascinación que ha despertado la contemplación del firmamento en todas las culturas.</p>
+      <p>Apps astronómicas y la revolución de los telescopios inteligentes. El cielo al alcance de todos.</p>
       <ul class="book-topics">
         <li>¿Qué telescopio comprar?</li>
         <li>El cielo de cada estación</li>
@@ -409,7 +411,7 @@
         <li>Telescopios inteligentes, hoy</li>
         <li>Astronomía moderna, en lenguaje fácil</li>
       </ul>
-      <p class="book-close">Miremos el cielo juntos, con la misma fascinación que me despertó a mí la primera noche de observación, cuando era un niño.</p>
+      <p class="book-close">Miremos el cielo juntos, con la misma fascinación que me despertó cuando era un niño.</p>
     </div>
   </section>
 
@@ -444,14 +446,26 @@
     </div>
   </section>
 
+  <section id="contacto" class="contact">
+    <span class="kicker">Hablemos</span>
+    <h2>Contacto</h2>
+    <div class="contact-row">
+      <a class="contact-email" href="mailto:robertvidalastronomia@hotmail.com">robertvidalastronomia@hotmail.com</a>
+      <a class="contact-ig" href="https://instagram.com/quietly23" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect>
+          <circle cx="12" cy="12" r="5"></circle>
+          <circle cx="17.6" cy="6.4" r="0.9" fill="currentColor" stroke="none"></circle>
+        </svg>
+        <span>@quietly23</span>
+      </a>
+    </div>
+  </section>
+
 </div>
 
 <footer>
   <p>Robert Vidal Calvís · Achernar Ediciones</p>
-  <p class="footer-contact">
-    <a href="mailto:robertvidalastronomia@hotmail.com">robertvidalastronomia@hotmail.com</a>
-    · <a href="https://instagram.com/quietly23" target="_blank" rel="noopener">@quietly23</a>
-  </p>
 </footer>
 
 </body>
