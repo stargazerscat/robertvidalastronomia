@@ -141,7 +141,7 @@
     border: 1px solid var(--line);
     box-shadow: 0 16px 40px -18px rgba(0,0,0,0.8);
   }
-  .about p{ max-width: 60ch; }
+  .about p{ max-width: 60ch; text-align: justify; }
   .about p + p{ margin-top: 12px; }
 
   @media (max-width: 560px){
@@ -222,7 +222,7 @@
     font-size: 25px;
     margin: 0 0 14px;
   }
-  .book p{ max-width: 56ch; }
+  .book p{ max-width: 56ch; text-align: justify; }
   .book p + p{ margin-top: 12px; }
 
   .book-topics{
@@ -257,12 +257,13 @@
     color: var(--ink);
     border-left: 2px solid var(--gold-soft);
     padding-left: 14px;
+    text-align: justify;
   }
 
   /* ---------- Outings section (featured) ---------- */
   .outings{
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 36px;
     align-items: center;
   }
@@ -276,7 +277,7 @@
     line-height: 1.12;
     margin-bottom: 16px;
   }
-  .outings p{ max-width: 50ch; }
+  .outings p{ max-width: 50ch; text-align: justify; }
   .cta{
     display: inline-block;
     margin-top: 18px;
@@ -374,18 +375,6 @@
         <p>Me llamo Robert y resido en Barcelona. Soy aficionado a la astronomía desde que era pequeño. Tras contemplar por primera vez un cielo estrellado libre de contaminación lumínica, no he podido dejar de mirar hacia arriba.</p>
         <p>He formado parte de la Agrupació Astronòmica de Sabadell, y disfruto por igual de la contemplación a simple vista, con prismáticos y con telescopio. Autor de la web Stargazers Catalunya y coordinador de un grupo de salidas astronómicas por Cataluña.</p>
       </div>
-    </div>
-
-    <div class="snapshots">
-      <figure>
-        <img src="galeria2.jpg" alt="Robert junto a una recreación de la Luna a tamaño real">
-        <figcaption>Cara a cara con la Luna</figcaption>
-      </figure>
-      <figure>
-        <img src="galeria1.jpg" alt="Robert en una recreación de una estación espacial, con la Tierra al fondo">
-        <figcaption>Soñando con mirar la Tierra desde arriba</figcaption>
-      </figure>
-    </div>
   </section>
 
   <section id="salidas" class="outings">
@@ -445,6 +434,21 @@
       <figure>
         <img src="captura2.jpg" alt="Nebulosa Cabeza de Caballo, IC 434, capturada con Seestar S50">
         <figcaption><strong>IC 434</strong> — Cabeza de Caballo</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="instantaneas">
+    <span class="kicker">Un poco de fantasía</span>
+    <h2>Instantáneas</h2>
+    <div class="snapshots">
+      <figure>
+        <img src="galeria2.jpg" alt="Robert junto a una recreación de la Luna a tamaño real">
+        <figcaption>Cara a cara con la Luna</figcaption>
+      </figure>
+      <figure>
+        <img src="galeria1.jpg" alt="Robert en una recreación de una estación espacial, con la Tierra al fondo">
+        <figcaption>Soñando con mirar la Tierra desde arriba</figcaption>
       </figure>
     </div>
   </section>
