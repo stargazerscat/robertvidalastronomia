@@ -27,8 +27,8 @@
     background: var(--bg);
     color: var(--ink);
     font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
-    font-size: 19px;
-    line-height: 1.65;
+    font-size: 18px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -39,9 +39,9 @@
   a:focus-visible, button:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
 
   .wrap{
-    max-width: 780px;
+    max-width: 740px;
     margin: 0 auto;
-    padding: 0 28px;
+    padding: 0 26px;
   }
 
   h1,h2,h3{
@@ -52,56 +52,42 @@
   }
 
   /* ---------- Hero ---------- */
-  .hero-image{
-    width: 100%;
-    height: 34vh;
-    min-height: 220px;
-    max-height: 360px;
-    overflow: hidden;
-  }
-  .hero-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .hero-text{
     text-align: center;
-    padding: 54px 28px 50px;
-    border-bottom: 1px solid var(--line);
+    padding: 40px 26px 32px;
   }
 
   .eyebrow{
     font-family: 'EB Garamond', serif;
     font-style: italic;
     color: var(--ink-dim);
-    font-size: 18px;
-    margin-bottom: 16px;
+    font-size: 17px;
+    margin-bottom: 12px;
   }
 
   .hero-text h1{
-    font-size: clamp(36px, 6vw, 56px);
+    font-size: clamp(32px, 5.5vw, 50px);
     letter-spacing: 0.03em;
     line-height: 1.05;
   }
 
   .hero-tagline{
-    margin-top: 18px;
+    margin-top: 14px;
     color: var(--ink-dim);
-    font-size: 20px;
+    font-size: 18px;
     font-style: italic;
-    max-width: 480px;
+    max-width: 460px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .hero-links{
-    margin-top: 30px;
+    margin-top: 22px;
     display: flex;
-    gap: 28px;
+    gap: 24px;
     justify-content: center;
     flex-wrap: wrap;
-    font-size: 17px;
+    font-size: 16px;
   }
   .hero-links a{
     border-bottom: 1px solid var(--line);
@@ -109,9 +95,24 @@
   }
   .hero-links a:hover{ border-color: var(--gold); }
 
+  .hero-image{
+    width: 100%;
+    height: 30vh;
+    min-height: 190px;
+    max-height: 320px;
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   /* ---------- Sections ---------- */
   section{
-    padding: 72px 0;
+    padding: 52px 0;
     border-top: 1px solid var(--line);
   }
 
@@ -119,124 +120,125 @@
     color: var(--gold);
     font-family: 'EB Garamond', serif;
     font-style: italic;
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 17px;
+    margin-bottom: 8px;
     display: block;
   }
 
   section h2{
-    font-size: 33px;
-    margin-bottom: 26px;
+    font-size: 30px;
+    margin-bottom: 20px;
   }
 
   /* ---------- About ---------- */
   .about-grid{
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 40px;
+    grid-template-columns: 170px 1fr;
+    gap: 32px;
     align-items: start;
   }
   .about-grid img{
     border: 1px solid var(--line);
-    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.8);
+    box-shadow: 0 16px 40px -18px rgba(0,0,0,0.8);
   }
   .about p{ max-width: 60ch; }
-  .about p + p{ margin-top: 16px; }
+  .about p + p{ margin-top: 12px; }
 
   @media (max-width: 560px){
     .about-grid{ grid-template-columns: 1fr; }
-    .about-grid img{ max-width: 220px; }
+    .about-grid img{ max-width: 180px; }
   }
 
   .snapshots{
     display: flex;
-    gap: 16px;
-    margin-top: 32px;
+    gap: 14px;
+    margin-top: 24px;
   }
   .snapshots figure{ margin:0; flex: 1; }
   .snapshots img{
     width: 100%;
-    height: 220px;
+    height: 170px;
     object-fit: cover;
     border: 1px solid var(--line);
   }
   .snapshots figcaption{
-    margin-top: 8px;
-    font-size: 14px;
+    margin-top: 6px;
+    font-size: 13px;
     font-style: italic;
     color: var(--ink-dim);
     text-align: center;
   }
   @media (max-width: 560px){
     .snapshots{ flex-direction: column; }
-    .snapshots img{ height: 260px; }
+    .snapshots img{ height: 210px; }
   }
 
   /* ---------- Equipment / captures grid ---------- */
   .grid-2{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 18px;
   }
   .grid-2 figure{ margin: 0; }
   .grid-2 img{
     width: 100%;
-    height: 300px;
+    height: 230px;
     object-fit: cover;
     border: 1px solid var(--line);
   }
   .grid-2 figcaption{
-    margin-top: 10px;
-    font-size: 15px;
+    margin-top: 8px;
+    font-size: 14px;
     color: var(--ink-dim);
   }
   .grid-2 figcaption strong{ color: var(--ink); font-weight: 500; }
   @media (max-width: 560px){
     .grid-2{ grid-template-columns: 1fr; }
+    .grid-2 img{ height: 260px; }
   }
 
   /* ---------- Book section ---------- */
   .book{
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 40px;
+    grid-template-columns: 170px 1fr;
+    gap: 32px;
     align-items: start;
   }
   .book img{
     width: 100%;
     border: 1px solid var(--line);
-    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.8);
+    box-shadow: 0 16px 40px -18px rgba(0,0,0,0.8);
   }
   .book-status{
     display: inline-block;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.08em;
     color: var(--bg);
     background: var(--gold);
-    padding: 5px 12px;
-    margin-bottom: 16px;
+    padding: 4px 10px;
+    margin-bottom: 12px;
   }
   .book h3{
-    font-size: 28px;
-    margin: 0 0 6px;
+    font-size: 25px;
+    margin: 0 0 4px;
   }
   .book .subtitle{
     color: var(--ink-dim);
     font-style: italic;
-    margin: 0 0 18px;
-    font-size: 18px;
+    margin: 0 0 14px;
+    font-size: 17px;
   }
   .book p{ max-width: 56ch; }
-  .book p + p{ margin-top: 14px; }
+  .book p + p{ margin-top: 12px; }
 
   .book-topics{
     list-style: none;
-    margin: 18px 0 0;
+    margin: 14px 0 0;
     padding: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px 20px;
-    font-size: 16px;
+    gap: 6px 18px;
+    font-size: 15px;
     color: var(--ink-dim);
   }
   .book-topics li{
@@ -251,55 +253,55 @@
   }
   @media (max-width: 560px){
     .book{ grid-template-columns: 1fr; }
-    .book img{ max-width: 220px; margin: 0 auto; }
+    .book img{ max-width: 190px; margin: 0 auto; }
     .book-topics{ grid-template-columns: 1fr; }
   }
 
   .book-close{
-    margin-top: 20px;
+    margin-top: 16px;
     font-style: italic;
     color: var(--ink);
     border-left: 2px solid var(--gold-soft);
-    padding-left: 16px;
+    padding-left: 14px;
   }
 
   /* ---------- Outings section (featured) ---------- */
   .outings{
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 40px;
+    grid-template-columns: 170px 1fr;
+    gap: 32px;
     align-items: start;
   }
   .outings img{
     width: 100%;
     border: 1px solid var(--line);
-    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.8);
+    box-shadow: 0 16px 40px -18px rgba(0,0,0,0.8);
   }
   .outings-features{
     list-style: none;
-    margin: 18px 0 0;
+    margin: 14px 0 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 15px;
   }
   .outings-features li{
-    padding: 10px 0;
+    padding: 8px 0;
     border-top: 1px solid var(--line);
     display: flex;
-    gap: 10px;
+    gap: 8px;
   }
   .outings-features li:first-child{ border-top: none; }
-  .outings-features strong{ color: var(--gold); font-weight: 500; min-width: 190px; }
+  .outings-features strong{ color: var(--gold); font-weight: 500; min-width: 170px; }
   .outings-cta{
-    margin-top: 26px;
+    margin-top: 18px;
     font-style: italic;
-    font-size: 19px;
+    font-size: 17px;
   }
   .cta{
     display: inline-block;
-    margin-top: 14px;
+    margin-top: 10px;
     border: 1px solid var(--gold-soft);
-    padding: 11px 22px;
-    font-size: 16px;
+    padding: 9px 20px;
+    font-size: 15px;
     letter-spacing: 0.02em;
     color: var(--gold);
   }
@@ -310,23 +312,23 @@
   }
   @media (max-width: 560px){
     .outings{ grid-template-columns: 1fr; }
-    .outings img{ max-width: 240px; margin: 0 auto; }
-    .outings-features strong{ min-width: 150px; }
+    .outings img{ max-width: 210px; margin: 0 auto; }
+    .outings-features strong{ min-width: 140px; }
   }
 
   /* ---------- Footer ---------- */
   footer{
-    padding: 44px 0 60px;
+    padding: 34px 0 46px;
     text-align: center;
     color: var(--ink-dim);
-    font-size: 15px;
+    font-size: 14px;
     border-top: 1px solid var(--line);
   }
   footer a{ color: var(--ink-dim); }
   footer a:hover{ color: var(--gold); }
   .footer-contact{
-    margin-top: 10px;
-    font-size: 15px;
+    margin-top: 8px;
+    font-size: 14px;
   }
   .footer-contact a{ color: var(--gold-soft); }
   .footer-contact a:hover{ color: var(--gold); }
@@ -334,19 +336,19 @@
 </head>
 <body>
 
-<div class="hero-image">
-  <img src="hero.jpg" alt="Grupo de observación astronómica bajo la Vía Láctea, en una salida de montaña">
-</div>
-
 <div class="hero-text">
   <span class="eyebrow">Divulgación astronómica</span>
   <h1>Robert Vidal Calvís</h1>
   <p class="hero-tagline">Observando el cielo desde Barcelona, y ayudando a otros a hacer lo mismo.</p>
   <nav class="hero-links">
     <a href="#sobre-mi">Sobre mí</a>
-    <a href="#libro">Mi libro</a>
     <a href="#salidas">Salidas astronómicas</a>
+    <a href="#libro">Mi libro</a>
   </nav>
+</div>
+
+<div class="hero-image">
+  <img src="hero.jpg" alt="Grupo de observación astronómica bajo la Vía Láctea, en una salida de montaña">
 </div>
 
 <div class="wrap">
@@ -374,34 +376,20 @@
     </div>
   </section>
 
-  <section id="equipo">
-    <span class="kicker">Con qué observo</span>
-    <h2>Mi equipo</h2>
-    <p>Un refractor de 70 mm, un Maksutov 127 AZ GoTo para observación planetaria, y un Seestar S50 para astrofotografía de cielo profundo.</p>
-    <div class="grid-2" style="margin-top: 28px;">
-      <figure>
-        <img src="equipo1.jpg" alt="Maksutov 127 AZ GoTo apuntando al cielo junto a un portátil con software de captura">
-        <figcaption><strong>Maksutov 127 AZ GoTo</strong> — observación planetaria</figcaption>
-      </figure>
-      <figure>
-        <img src="equipo2.jpg" alt="Seestar S50 montado en trípode en una salida de observación al atardecer">
-        <figcaption><strong>Seestar S50</strong> — astrofotografía de campo</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section id="capturas">
-    <span class="kicker">Lo que capto</span>
-    <h2>Algunas capturas</h2>
-    <div class="grid-2">
-      <figure>
-        <img src="captura1.jpg" alt="Nebulosa de la Roseta, NGC 2244, capturada con Seestar S50">
-        <figcaption><strong>NGC 2244</strong> — Nebulosa de la Roseta</figcaption>
-      </figure>
-      <figure>
-        <img src="captura2.jpg" alt="Nebulosa Cabeza de Caballo, IC 434, capturada con Seestar S50">
-        <figcaption><strong>IC 434</strong> — Cabeza de Caballo</figcaption>
-      </figure>
+  <section id="salidas" class="outings">
+    <img src="stargazers-promo.jpg" alt="Captura de la web Stargazers Catalunya, con previsión de observación, calendario lunar y mapa de contaminación lumínica">
+    <div>
+      <span class="kicker">Observación en directo</span>
+      <h2>Stargazers Catalunya</h2>
+      <p>Todo lo que necesitas para planificar tu próxima salida astronómica, en un solo sitio.</p>
+      <ul class="outings-features">
+        <li><strong>Veredicto de la noche</strong> predicción de si una noche y lugar concretos serán propicios para observar</li>
+        <li><strong>Previsión meteorológica</strong> nubosidad, humedad, viento y niebla hora a hora</li>
+        <li><strong>Mapa Bortle</strong> contaminación lumínica de cualquier punto del mapa</li>
+        <li><strong>Calendario lunar</strong> fases e iluminación día a día</li>
+      </ul>
+      <p class="outings-cta">Ven a observar con nosotros.</p>
+      <a class="cta" href="https://stargazerscataluny.wixsite.com/stargazers-catalunya" target="_blank" rel="noopener">Ver Stargazers Catalunya →</a>
     </div>
   </section>
 
@@ -425,20 +413,34 @@
     </div>
   </section>
 
-  <section id="salidas" class="outings">
-    <img src="stargazers-promo.jpg" alt="Captura de la web Stargazers Catalunya, con previsión de observación, calendario lunar y mapa de contaminación lumínica">
-    <div>
-      <span class="kicker">Observación en directo</span>
-      <h2>Stargazers Catalunya</h2>
-      <p>Todo lo que necesitas para planificar tu próxima salida astronómica, en un solo sitio.</p>
-      <ul class="outings-features">
-        <li><strong>Veredicto de la noche</strong> predicción de si una noche y lugar concretos serán propicios para observar</li>
-        <li><strong>Previsión meteorológica</strong> nubosidad, humedad, viento y niebla hora a hora</li>
-        <li><strong>Mapa Bortle</strong> contaminación lumínica de cualquier punto del mapa</li>
-        <li><strong>Calendario lunar</strong> fases e iluminación día a día</li>
-      </ul>
-      <p class="outings-cta">Ven a observar con nosotros.</p>
-      <a class="cta" href="https://stargazerscataluny.wixsite.com/stargazers-catalunya" target="_blank" rel="noopener">Ver Stargazers Catalunya →</a>
+  <section id="equipo">
+    <span class="kicker">Con qué observo</span>
+    <h2>Mi equipo</h2>
+    <p>Un refractor de 70 mm, un Maksutov 127 AZ GoTo para observación planetaria, y un Seestar S50 para astrofotografía de cielo profundo.</p>
+    <div class="grid-2" style="margin-top: 22px;">
+      <figure>
+        <img src="equipo1.jpg" alt="Maksutov 127 AZ GoTo apuntando al cielo junto a un portátil con software de captura">
+        <figcaption><strong>Maksutov 127 AZ GoTo</strong> — observación planetaria</figcaption>
+      </figure>
+      <figure>
+        <img src="equipo2.jpg" alt="Seestar S50 montado en trípode en una salida de observación al atardecer">
+        <figcaption><strong>Seestar S50</strong> — astrofotografía de campo</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="capturas">
+    <span class="kicker">Lo que capto</span>
+    <h2>Algunas capturas</h2>
+    <div class="grid-2">
+      <figure>
+        <img src="captura1.jpg" alt="Nebulosa de la Roseta, NGC 2244, capturada con Seestar S50">
+        <figcaption><strong>NGC 2244</strong> — Nebulosa de la Roseta</figcaption>
+      </figure>
+      <figure>
+        <img src="captura2.jpg" alt="Nebulosa Cabeza de Caballo, IC 434, capturada con Seestar S50">
+        <figcaption><strong>IC 434</strong> — Cabeza de Caballo</figcaption>
+      </figure>
     </div>
   </section>
 
