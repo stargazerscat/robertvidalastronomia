@@ -271,7 +271,9 @@
     width: 100%;
     border: 1px solid var(--line);
     box-shadow: 0 16px 40px -18px rgba(0,0,0,0.8);
+    transition: opacity 0.15s ease;
   }
+  .outings a:hover img{ opacity: 0.85; }
   .outings-title{
     font-size: clamp(28px, 4.2vw, 40px);
     line-height: 1.12;
@@ -380,7 +382,9 @@
   </section>
 
   <section id="salidas" class="outings">
-    <img src="stargazers-promo.jpg" alt="Captura de la web Stargazers Catalunya, con previsión de observación, calendario lunar y mapa de contaminación lumínica">
+    <a href="https://stargazerscataluny.wixsite.com/stargazers-catalunya" target="_blank" rel="noopener">
+      <img src="stargazers-promo.jpg" alt="Captura de la web Stargazers Catalunya, con previsión de observación, calendario lunar y mapa de contaminación lumínica">
+    </a>
     <div>
       <span class="kicker">Stargazers Catalunya</span>
       <h2 class="outings-title">Ven a observar con nosotros</h2>
