@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robert Vidal Calvís — Astronomía</title>
+<meta name="description" content="Robert Vidal Calvís. Divulgación astronómica, salidas de observación y el libro Astronomía al alcance de todos.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #05070c;
+    --ink: #e9e4d8;
+    --ink-dim: #a9a79c;
+    --gold: #c9a668;
+    --gold-soft: #8a7752;
+    --line: rgba(201,166,104,0.18);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 19px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img{ display:block; max-width:100%; height:auto; }
+
+  a{ color: var(--gold); text-decoration: none; }
+  a:hover{ color: var(--ink); }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  .wrap{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  h1,h2,h3{
+    font-family: 'Cormorant Garamond', 'EB Garamond', serif;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position: relative;
+    min-height: 72vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 80px 28px 56px;
+  }
+  .hero img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(5,7,12,0.35) 0%, rgba(5,7,12,0.55) 55%, rgba(5,7,12,0.96) 100%);
+    z-index: 1;
+  }
+  .hero-inner{ position: relative; z-index: 2; }
+
+  .eyebrow{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .hero h1{
+    font-size: clamp(38px, 6.5vw, 62px);
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.6);
+  }
+
+  .hero-tagline{
+    margin-top: 20px;
+    color: var(--ink-dim);
+    font-size: 20px;
+    font-style: italic;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-links{
+    margin-top: 36px;
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 17px;
+  }
+  .hero-links a{
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 3px;
+  }
+  .hero-links a:hover{ border-color: var(--gold); }
+
+  /* ---------- Sections ---------- */
+  section{
+    padding: 72px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .kicker{
+    color: var(--gold);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  section h2{
+    font-size: 33px;
+    margin-bottom: 26px;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .about-grid img{
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.8);
+  }
+  .about p{ max-width: 60ch; }
+  .about p + p{ margin-top: 16px; }
+
+  @media (max-width: 560px){
+    .about-grid{ grid-template-columns: 1fr; }
+    .about-grid img{ max-width: 220px; }
+  }
+
+  .snapshots{
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .snapshots figure{ margin:0; flex: 1; }
+  .snapshots img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+  .snapshots figcaption{
+    margin-top: 8px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-dim);
+    text-align: center;
+  }
+  @media (max-width: 560px){
+    .snapshots{ flex-direction: column; }
+    .snapshots img{ height: 260px; }
+  }
+
+  /* ---------- Equipment / captures grid ---------- */
+  .grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .grid-2 figure{ margin: 0; }
+  .grid-2 img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+  .grid-2 figcaption{
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--ink-dim);
+  }
+  .grid-2 figcaption strong{ color: var(--ink); font-weight: 500; }
+  @media (max-width: 560px){
+    .grid-2{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Book section ---------- */
+  .book{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .book img{
+    width: 100%;
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.8);
+  }
+  .book-status{
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--bg);
+    background: var(--gold);
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+  .book h3{
+    font-size: 28px;
+    margin: 0 0 6px;
+  }
+  .book .subtitle{
+    color: var(--ink-dim);
+    font-style: italic;
+    margin: 0 0 18px;
+    font-size: 18px;
+  }
+  .book p{ max-width: 56ch; }
+
+  @media (max-width: 560px){
+    .book{ grid-template-columns: 1fr; }
+    .book img{ max-width: 220px; margin: 0 auto; }
+  }
+
+  /* ---------- Outings section ---------- */
+  .outings-card{
+    border: 1px solid var(--line);
+    padding: 32px 30px;
+    background: linear-gradient(180deg, rgba(201,166,104,0.05), transparent);
+  }
+  .outings-card p{ max-width: 56ch; }
+  .cta{
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px solid var(--gold-soft);
+    padding: 11px 22px;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--gold);
+  }
+  .cta:hover{
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding: 40px 0 60px;
+    text-align: center;
+    color: var(--ink-dim);
+    font-size: 15px;
+    border-top: 1px solid var(--line);
+  }
+  footer a{ color: var(--ink-dim); }
+  footer a:hover{ color: var(--gold); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="hero.jpg" alt="Grupo de observación astronómica bajo la Vía Láctea, en una salida de montaña">
+  <div class="hero-inner">
+    <span class="eyebrow">Divulgación astronómica</span>
+    <h1>Robert Vidal Calvís</h1>
+    <p class="hero-tagline">Observando el cielo desde Barcelona, y ayudando a otros a hacer lo mismo.</p>
+    <nav class="hero-links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#libro">Mi libro</a>
+      <a href="#salidas">Salidas astronómicas</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section id="sobre-mi" class="about">
+    <span class="kicker">Quién soy</span>
+    <h2>Sobre mí</h2>
+    <div class="about-grid">
+      <img src="portrait.jpg" alt="Robert Vidal Calvís">
+      <div>
+        <p>Me llamo Robert y resido en Barcelona. Soy aficionado a la astronomía desde los 10 años. Tras contemplar por primera vez un cielo estrellado libre de contaminación lumínica, no he podido dejar de mirar hacia arriba.</p>
+        <p>He formado parte de la Agrupació Astronòmica de Sabadell, y disfruto por igual de la contemplación a simple vista, con prismáticos y con telescopio. Autor de la web Stargazers Catalunya y coordinador de un grupo de salidas astronómicas por Cataluña.</p>
+      </div>
+    </div>
+
+    <div class="snapshots">
+      <figure>
+        <img src="galeria2.jpg" alt="Robert junto a una recreación de la Luna a tamaño real">
+        <figcaption>Cara a cara con la Luna</figcaption>
+      </figure>
+      <figure>
+        <img src="galeria1.jpg" alt="Robert en una recreación de una estación espacial, con la Tierra al fondo">
+        <figcaption>Soñando con mirar la Tierra desde arriba</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="equipo">
+    <span class="kicker">Con qué observo</span>
+    <h2>Mi equipo</h2>
+    <p>Un refractor de 70 mm, un Maksutov 127 AZ GoTo para observación planetaria, y un Seestar S50 para astrofotografía de cielo profundo.</p>
+    <div class="grid-2" style="margin-top: 28px;">
+      <figure>
+        <img src="equipo1.jpg" alt="Maksutov 127 AZ GoTo apuntando al cielo junto a un portátil con software de captura">
+        <figcaption><strong>Maksutov 127 AZ GoTo</strong> — observación planetaria</figcaption>
+      </figure>
+      <figure>
+        <img src="equipo2.jpg" alt="Seestar S50 montado en trípode en una salida de observación al atardecer">
+        <figcaption><strong>Seestar S50</strong> — astrofotografía de campo</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="capturas">
+    <span class="kicker">Lo que capto</span>
+    <h2>Algunas capturas</h2>
+    <div class="grid-2">
+      <figure>
+        <img src="captura1.jpg" alt="Nebulosa de la Roseta, NGC 2244, capturada con Seestar S50">
+        <figcaption><strong>NGC 2244</strong> — Nebulosa de la Roseta</figcaption>
+      </figure>
+      <figure>
+        <img src="captura2.jpg" alt="Nebulosa Cabeza de Caballo, IC 434, capturada con Seestar S50">
+        <figcaption><strong>IC 434</strong> — Cabeza de Caballo</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="libro" class="book">
+    <img src="cover.jpg" alt="Portada del libro Astronomía al alcance de todos, de Robert Vidal Calvís">
+    <div>
+      <span class="kicker">Mi libro</span>
+      <span class="book-status">Próximamente</span>
+      <h3>Astronomía al alcance de todos</h3>
+      <p class="subtitle">Robert Vidal Calvís</p>
+      <p>Una guía pensada para mirar el cielo sin complicaciones: desde lo que se ve a simple vista hasta lo que hoy permiten ver los telescopios inteligentes. En fase final de producción, publicado bajo el sello Achernar Ediciones.</p>
+    </div>
+  </section>
+
+  <section id="salidas">
+    <span class="kicker">Observación en directo</span>
+    <h2>Salidas astronómicas</h2>
+    <div class="outings-card">
+      <p>En Stargazers Catalunya organizo y comparto salidas de observación por Cataluña, junto con mapas de contaminación lumínica, calendario lunar y previsión de condiciones para observar.</p>
+      <a class="cta" href="https://stargazerscataluny.wixsite.com/stargazers-catalunya" target="_blank" rel="noopener">Ver Stargazers Catalunya →</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>Robert Vidal Calvís · Achernar Ediciones</p>
+</footer>
+
+</body>
+</html>
