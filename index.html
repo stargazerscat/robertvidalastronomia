@@ -260,6 +260,27 @@
     text-align: justify;
   }
 
+  .book a img{ transition: opacity .15s ease; }
+  .book a:hover img{ opacity: .85; }
+  .book-buy{ margin: 0 0 6px; }
+  .book .cta{ margin: 0 0 18px; }
+  .cta.cta-solid{ background: var(--gold); color: var(--bg); border-color: var(--gold); font-weight: 500; }
+  .cta.cta-solid:hover{ background: transparent; color: var(--gold); }
+  .center{ text-align: center; }
+
+  .reel{ margin: 6px auto 30px; max-width: 340px; }
+  .reel video{ width: 100%; display: block; border: 1px solid var(--line); background: #000; aspect-ratio: 9/16; }
+
+  .carousel{ position: relative; }
+  .car-track{ display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 10px; scrollbar-width: thin; scrollbar-color: var(--gold-soft) transparent; }
+  .car-track > img, .car-track > a{ flex: 0 0 auto; width: min(78%, 320px); scroll-snap-align: center; }
+  .car-track a img{ width: 100%; }
+  .car-track img{ border: 1px solid var(--line); }
+  .car-btn{ position: absolute; top: 45%; transform: translateY(-50%); z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-soft); background: rgba(5,7,12,.85); color: var(--gold); font-size: 26px; line-height: 1; cursor: pointer; }
+  .car-btn:hover{ background: var(--gold); color: var(--bg); }
+  .car-btn.prev{ left: -8px; } .car-btn.next{ right: -8px; }
+  @media (max-width: 560px){ .car-btn{ display: none; } }
+
   /* ---------- Outings section (featured) ---------- */
   .outings{
     display: grid;
@@ -356,8 +377,8 @@
   <h1>Robert Vidal Calvís</h1>
   <nav class="hero-links">
     <a href="#sobre-mi">Sobre mí</a>
-    <a href="#salidas">Salidas astronómicas</a>
     <a href="#libro">Mi libro</a>
+    <a href="#salidas">Salidas astronómicas</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </div>
@@ -377,8 +398,56 @@
         <p>¡Hola! me llamo Robert y resido en Barcelona. Soy aficionado a la astronomía desde que era un niño. Tras contemplar por primera vez un cielo estrellado, no he podido dejar de mirar hacia arriba. Fascinado por la mitología celeste, los cometas y la belleza que se esconde allá arriba.</p>
         <p>Han pasado por mis manos todo tipo de telescopios y he disfrutado tanto en astronomía visual, como astrofotografía.</p>
         <p>He formado parte de la Agrupació Astronòmica de Sabadell y soy el autor de la web Stargazers Catalunya. Coordino un grupo de salidas astronómicas. En la que seréis bienvenidos ¡Ven a observar con nosotros!</p>
-        <p>Mi pasión también me ha llevado a escribir un libro que muy pronto podrás disfrutar, te invito a conocer un poco más en las siguientes líneas.</p>
+        <p>Mi pasión también me ha llevado a escribir un libro que ya está disponible en Amazon para que lo puedas disfrutar, te invito a conocer un poco más en las siguientes líneas.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="libro" class="book">
+    <a href="https://www.amazon.es/Astronom%C3%ADa-alcance-todos-Robert-Calv%C3%ADs/dp/8409940388" target="_blank" rel="noopener"><img src="cover.jpg" alt="Portada del libro Astronomía al alcance de todos, de Robert Vidal Calvís"></a>
+    <div>
+      <span class="kicker">Mi libro</span>
+      <span class="book-status">¡Ya disponible!</span>
+      <h3>Astronomía al alcance de todos</h3>
+      <p class="book-buy">Cómpralo en Amazon en el siguiente enlace:</p>
+      <a class="cta cta-solid" href="https://www.amazon.es/Astronom%C3%ADa-alcance-todos-Robert-Calv%C3%ADs/dp/8409940388" target="_blank" rel="noopener">Comprar en Amazon →</a>
+      <p>Una guía pensada para que cualquiera pueda entender el cielo desde la primera noche: un recorrido por la mitología y la fascinación que ha despertado la contemplación del firmamento en todas las culturas.</p>
+      <p>Apps astronómicas y la revolución de los telescopios inteligentes. El cielo al alcance de todos.</p>
+      <ul class="book-topics">
+        <li>¿Qué telescopio comprar?</li>
+        <li>El cielo de cada estación</li>
+        <li>Cometas: fascinación y terror en los cielos</li>
+        <li>La tríada ibérica de eclipses</li>
+        <li>Telescopios inteligentes</li>
+        <li>Astronomía moderna, en lenguaje fácil</li>
+      </ul>
+      <p class="book-close">Miremos el cielo juntos, con la misma fascinación que me despertó cuando era un niño.</p>
+    </div>
+  </section>
+
+  <section id="libro-por-dentro">
+    <span class="kicker">Échale un vistazo</span>
+    <h2>El libro por dentro</h2>
+    <div class="reel">
+      <video controls playsinline muted loop preload="metadata" poster="reel-poster.jpg">
+        <source src="reel-libro.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="carousel" aria-label="Páginas del libro">
+      <button class="car-btn prev" type="button" aria-label="Anterior">‹</button>
+      <div class="car-track">
+        <img src="libro-01-portada.jpg" alt="Mira el cielo con otros ojos: portada y páginas del libro" loading="lazy">
+        <img src="libro-02-orientarse.jpg" alt="Paso a paso: aprende a orientarte en el cielo" loading="lazy">
+        <img src="libro-03-telescopios.jpg" alt="Telescopios inteligentes: cómo funcionan y cómo sacarles partido" loading="lazy">
+        <img src="libro-04-cielo-profundo.jpg" alt="Cielo profundo fotografiado por el autor con un Seestar S50" loading="lazy">
+        <img src="libro-05-mitos.jpg" alt="Mitos y leyendas: el cielo de nuestros ancestros" loading="lazy">
+        <img src="libro-06-planifica.jpg" alt="Antes de salir: planifica tu noche de observación" loading="lazy">
+        <img src="libro-07-contenido.jpg" alt="Contenido del libro Astronomía al alcance de todos" loading="lazy">
+        <a href="https://www.amazon.es/Astronom%C3%ADa-alcance-todos-Robert-Calv%C3%ADs/dp/8409940388" target="_blank" rel="noopener"><img src="libro-08-disponible.jpg" alt="Ya disponible en Amazon, tapa blanda y Kindle" loading="lazy"></a>
+      </div>
+      <button class="car-btn next" type="button" aria-label="Siguiente">›</button>
+    </div>
+    <p class="center"><a class="cta cta-solid" href="https://www.amazon.es/Astronom%C3%ADa-alcance-todos-Robert-Calv%C3%ADs/dp/8409940388" target="_blank" rel="noopener">Comprar en Amazon →</a></p>
   </section>
 
   <section id="salidas" class="outings">
@@ -391,26 +460,6 @@
       <p>Todo lo que necesitas saber para planificar una salida astronómica: previsiones meteorológicas y cómo interpretarlas, veredicto para una noche y lugar concreto, mapa Bortle, fases lunares, hora de salida y puesta de la Luna...</p>
       <p>Escríbenos y ven a observar el cielo con nosotros, nos gusta compartir conocimientos y experiencias. Sólo necesitas ganas de mirar hacia arriba.</p>
       <a class="cta" href="https://stargazerscataluny.wixsite.com/stargazers-catalunya" target="_blank" rel="noopener">Ver Stargazers Catalunya →</a>
-    </div>
-  </section>
-
-  <section id="libro" class="book">
-    <img src="cover.jpg" alt="Portada del libro Astronomía al alcance de todos, de Robert Vidal Calvís">
-    <div>
-      <span class="kicker">Mi libro</span>
-      <span class="book-status">Disponible estas Navidades</span>
-      <h3>Astronomía al alcance de todos</h3>
-      <p>Una guía pensada para que cualquiera pueda entender el cielo desde la primera noche: un recorrido por la mitología y la fascinación que ha despertado la contemplación del firmamento en todas las culturas.</p>
-      <p>Apps astronómicas y la revolución de los telescopios inteligentes. El cielo al alcance de todos.</p>
-      <ul class="book-topics">
-        <li>¿Qué telescopio comprar?</li>
-        <li>El cielo de cada estación</li>
-        <li>Cometas: fascinación y terror en los cielos</li>
-        <li>La tríada ibérica de eclipses</li>
-        <li>Telescopios inteligentes</li>
-        <li>Astronomía moderna, en lenguaje fácil</li>
-      </ul>
-      <p class="book-close">Miremos el cielo juntos, con la misma fascinación que me despertó cuando era un niño.</p>
     </div>
   </section>
 
@@ -482,5 +531,13 @@
   <p>Robert Vidal Calvís</p>
 </footer>
 
+<script>
+  document.querySelectorAll('.carousel').forEach(function(c){
+    var t=c.querySelector('.car-track');
+    function step(){ var f=t.firstElementChild; return f ? f.getBoundingClientRect().width+16 : 300; }
+    c.querySelector('.prev').addEventListener('click',function(){ t.scrollBy({left:-step()}); });
+    c.querySelector('.next').addEventListener('click',function(){ t.scrollBy({left:step()}); });
+  });
+</script>
 </body>
 </html>
